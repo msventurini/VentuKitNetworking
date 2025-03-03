@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.AarMetadata
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
@@ -9,10 +10,14 @@ plugins {
     kotlin("plugin.serialization") version "2.0.0"
 }
 
+group = "io.github.msventurini"
+version = "0.1.0"
+
 kotlin {
     androidTarget {
 //        publishLibraryVariants("release")
-
+        publishLibraryVariants("release")
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilations.all {
             compileTaskProvider.configure {
                 compilerOptions {
