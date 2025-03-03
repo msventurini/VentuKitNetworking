@@ -6,5 +6,6 @@ build
 captures
 .externalNativeBuild
 .cxx
+github.properties
 local.properties
 xcuserdata
