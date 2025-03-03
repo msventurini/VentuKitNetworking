@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.vanniktech.mavenPublish)
-    kotlin("plugin.serialization") version "2.0.0"
 }
 
 group = "io.github.msventurini"
@@ -74,17 +73,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-//android {
-//    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
-//    compileSdk = libs.versions.android.compileSdk.get().toInt()
-//    defaultConfig {
-//        minSdk = libs.versions.android.minSdk.get().toInt()
-//    }
-//    compileOptions {
-//        sourceCompatibility = JavaVersion.VERSION_11
-//        targetCompatibility = JavaVersion.VERSION_11
-//    }
-//}
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
