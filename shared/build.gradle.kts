@@ -1,12 +1,12 @@
-import com.android.build.api.dsl.AarMetadata
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.vanniktech.mavenPublish)
     kotlin("plugin.serialization") version "2.0.0"
 }
 
@@ -15,7 +15,6 @@ version = "0.1.0"
 
 kotlin {
     androidTarget {
-//        publishLibraryVariants("release")
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilations.all {
@@ -57,7 +56,6 @@ kotlin {
             implementation(libs.ktor.client.darwin)
         }
 
-
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
@@ -75,4 +73,51 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+//android {
+//    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+//    compileSdk = libs.versions.android.compileSdk.get().toInt()
+//    defaultConfig {
+//        minSdk = libs.versions.android.minSdk.get().toInt()
+//    }
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_11
+//        targetCompatibility = JavaVersion.VERSION_11
+//    }
+//}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    signAllPublications()
+
+    coordinates(group.toString(), "ventukitnetworking", version.toString())
+
+    pom {
+        name = "VentuKitNetworking"
+        description = "Multiplatform networking module."
+        inceptionYear = "2025"
+        url = "https://github.com/msventurini/VentuKitNetworking"
+        licenses {
+            license {
+                name ="GNU Lesser General Public license, Version 2.1"
+                url = "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"
+                distribution = "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"
+            }
+
+        }
+        developers {
+            developer {
+                id = "msventurini"
+                name = "Matheus Silveira Venturini"
+                url = "https://github.com/msventurini/"
+            }
+        }
+        scm {
+            url = "https://github.com/msventurini/VentuKitNetworking"
+            connection = "scm:git:git://github.com/msventurini/VentuKitNetworking.git"
+            developerConnection = "scm:git:ssh://git@github.com/msventurini/VentuKitNetworking.git"
+        }
+    }
+
 }
