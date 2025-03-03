@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.AarMetadata
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
@@ -10,6 +11,8 @@ plugins {
 
 kotlin {
     androidTarget {
+//        publishLibraryVariants("release")
+
         compilations.all {
             compileTaskProvider.configure {
                 compilerOptions {
@@ -57,7 +60,8 @@ kotlin {
 }
 
 android {
-    namespace = "com.msventurini.ventukitnetworking"
+//    namespace = "com.msventurini.ventukitnetworking"
+    namespace = "io.github.msventurini.ventukitnetworking"
     compileSdk = 35
     defaultConfig {
         minSdk = 35
