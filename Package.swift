@@ -13,6 +13,6 @@ let package = Package(
       .binaryTarget(
          name: "Shared",
          url: "https://github.com/msventurini/VentuKitNetworking/releases/download/0.0.6/VentuKitNetworking.xcframework.zip",
-         checksum:"3e6ab47e267206aae89dbdbad9a664c26177a4e7979ce5127766e03e9ef5fe8a")
+         checksum:"961e5f487bb022308d34895efc8ee2eb8adb8be1e1788650e2e1efc4cbe42825")
    ]
 )
