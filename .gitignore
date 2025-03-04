@@ -6,6 +6,7 @@ build
 captures
 .externalNativeBuild
 .cxx
+.kotlin
 github.properties
 local.properties
 xcuserdata
