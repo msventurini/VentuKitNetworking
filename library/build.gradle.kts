@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.msventurini"
-version = "0.0.1"
+version = "0.0.2"
 
 kotlin {
     jvm()
@@ -56,7 +56,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(group.toString(), "VentuKitNetworking", version.toString())
 
     pom {
         name = "VentuKitNetworking"
