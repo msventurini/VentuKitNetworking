@@ -1,6 +1,7 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -9,7 +10,7 @@ plugins {
 }
 
 group = "io.github.msventurini"
-version = "0.0.4"
+version = "0.0.5"
 
 kotlin {
     jvm()
@@ -20,10 +21,26 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+
     linuxX64()
+
+    val xcframeworkName = "VentuKitNetworking"
+    val xcf = XCFramework(xcframeworkName)
+
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64(),
+    ).forEach {
+        it.binaries.framework {
+            baseName = xcframeworkName
+
+            // Specify CFBundleIdentifier to uniquely identify the framework
+            binaryOption("bundleId", "org.msventurini.${xcframeworkName}")
+            xcf.add(this)
+            isStatic = true
+        }
+    }
 
     sourceSets {
         val commonMain by getting {

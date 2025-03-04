@@ -1,5 +1,8 @@
 package io.github.kotlin.fibonacci
 
-fun Greeting(): String {
-    return "Hello World!"
+class Greeting {
+
+    fun greet(): String {
+        return "Hello!"
+    }
 }
