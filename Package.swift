@@ -2,17 +2,17 @@
 import PackageDescription
 
 let package = Package(
-   name: "Shared",
+   name: "VentuKitNetworking",
    platforms: [
      .iOS(.v14),
    ],
    products: [
-      .library(name: "Shared", targets: ["Shared"])
+      .library(name: "VentuKitNetworking", targets: ["VentuKitNetworking"])
    ],
    targets: [
       .binaryTarget(
          name: "Shared",
-         url: "https://github.com/msventurini/VentuKitNetworking/releases/download/v0.0.1-alpha/shared.xcframework.zip",
-         checksum:"4a5aca3f688dcaf20fb3ac6b3bf93f5d6a07d35f98021279528bc790e3ba2173")
+         url: "https://github.com/msventurini/VentuKitNetworking/releases/download/0.0.5/VentuKitNetworking.xcframework.zip",
+         checksum:"3e6ab47e267206aae89dbdbad9a664c26177a4e7979ce5127766e03e9ef5fe8a")
    ]
 )
