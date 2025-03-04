@@ -8,8 +8,8 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "io.github.kotlin"
-version = "1.0.0"
+group = "io.github.msventurini"
+version = "0.0.1"
 
 kotlin {
     jvm()
@@ -40,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+    namespace = "io.github.msventurini.ventukitnetworking"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -59,28 +59,28 @@ mavenPublishing {
     coordinates(group.toString(), "library", version.toString())
 
     pom {
-        name = "My library"
-        description = "A library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin/multiplatform-library-template/"
+        name = "VentuKitNetworking"
+        description = "A networking library."
+        inceptionYear = "2025"
+        url = "https://github.com/msventurini/VentuKitNetworking"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "GNU Lesser General Public license, Version 2.1"
+                url = "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"
+                distribution = "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "msventurini"
+                name = "Matheus Silveira Venturini"
+                url = "https://github.com/msventurini/"
             }
         }
         scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
+            url = "https://github.com/msventurini/VentuKitNetworking"
+            connection = "scm:git:git://github.com/msventurini/VentuKitNetworking.git"
+            developerConnection = "scm:git:ssh://git@github.com/msventurini/VentuKitNetworking.git"
         }
     }
 }
