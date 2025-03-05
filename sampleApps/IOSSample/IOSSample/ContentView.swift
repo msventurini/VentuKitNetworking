@@ -8,8 +8,6 @@
 import SwiftUI
 import VentuKitNetworking
 
-
-
 struct ContentView: View {
     @Environment(ViewModel.self) var viewModel
 
