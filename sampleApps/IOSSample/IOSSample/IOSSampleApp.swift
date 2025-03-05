@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct IOSSampleApp: App {
+    
+    @State var viewModel: ViewModel = ViewModel()
+
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(viewModel)
         }
     }
 }

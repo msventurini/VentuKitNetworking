@@ -1,24 +1,31 @@
 //
 //  ContentView.swift
-//  IOSSample
+//  TesteKmp
 //
-//  Created by Matheus Silveira Venturini on 05/03/25.
+//  Created by Matheus Silveira Venturini on 02/03/25.
 //
 
 import SwiftUI
+import VentuKitNetworking
+
+
 
 struct ContentView: View {
+    @Environment(ViewModel.self) var viewModel
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Start Receiving") {
+                Task {
+                    await viewModel.startObserving()
+                }
+            }
+            ListView(numbers: viewModel.values)
         }
-        .padding()
     }
 }
 
-#Preview {
+
+#Preview(traits: .modifier(CachedPreviewData())) {
     ContentView()
 }
