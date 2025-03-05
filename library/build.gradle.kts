@@ -13,7 +13,7 @@ group = "io.github.msventurini"
 version = "0.0.7"
 
 kotlin {
-    jvm()
+
     androidTarget {
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -21,8 +21,6 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-
-    linuxX64()
 
     val xcframeworkName = "VentuKitNetworking"
     val xcf = XCFramework(xcframeworkName)
