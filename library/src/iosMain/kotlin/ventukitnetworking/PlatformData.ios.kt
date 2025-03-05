@@ -1,4 +1,4 @@
-package PlatformUtils
+package ventukitnetworking
 
 import platform.UIKit.UIDevice
 

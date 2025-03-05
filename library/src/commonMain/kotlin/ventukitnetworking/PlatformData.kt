@@ -1,4 +1,4 @@
-package PlatformUtils
+package ventukitnetworking
 
 interface PlatformData {
     val name: String

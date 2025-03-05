@@ -1,4 +1,4 @@
-package PlatformUtils
+package ventukitnetworking
 
 class AndroidPlatform: PlatformData {
     override val name: String =

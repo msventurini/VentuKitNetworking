@@ -33,7 +33,6 @@ kotlin {
         it.binaries.framework {
             baseName = xcframeworkName
 
-            // Specify CFBundleIdentifier to uniquely identify the framework
             binaryOption("bundleId", "org.msventurini.${xcframeworkName}")
             xcf.add(this)
             isStatic = true
@@ -41,16 +40,25 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                //put your multiplatform dependencies here
-            }
+
+        commonMain.dependencies {
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.core)
+            implementation(libs.kotlinx.coroutines.core)
         }
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.kotlin.test)
-            }
+
+        androidMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
         }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+
     }
 }
 
