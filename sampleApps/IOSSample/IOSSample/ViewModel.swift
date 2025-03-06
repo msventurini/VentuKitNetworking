@@ -20,12 +20,30 @@ import VentuKitNetworking
 @Observable class ViewModel: ObservableObject {
     var values: [String] = []
     
+    var greeting: String = ""
+    
     func startObserving() async {
         
         let emittedValues = FlowValuesEmitter().oneToTenFlow()
+        
         
         for await number in emittedValues {
             self.values.append(number)
         }
     }
+    
+    func testSuspendedFunc() async {
+        
+        let client = NetworkClient()
+        
+        do {
+            greeting = try await client.greeting()
+            
+        } catch {
+            greeting = "erro"
+        }
+        
+        
+    }
+    
 }

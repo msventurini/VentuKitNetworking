@@ -15,10 +15,12 @@ struct ContentView: View {
         VStack {
             Button("Start Receiving") {
                 Task {
+//                    await viewModel.testSuspendedFunc()
                     await viewModel.startObserving()
                 }
             }
-            ListView(numbers: viewModel.values)
+            
+            ListView(topText: viewModel.greeting,numbers: viewModel.values)
         }
     }
 }
