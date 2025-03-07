@@ -20,7 +20,8 @@ import SwiftUI
 struct CachedPreviewData: PreviewModifier {
 
     static func makeSharedContext() async throws -> ViewModel {
-        var viewModel = ViewModel()
+//        var viewModel = ViewModel()
+        var viewModel = ViewModel(client: GamerPowerMockData())
         
         return viewModel
     }

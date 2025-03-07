@@ -18,11 +18,23 @@ import SwiftUI
 import VentuKitNetworking
 
 struct ListView: View {
-    let numbers: Array<String>
+    
+    @Environment(ViewModel.self) var viewModel
     
     var body: some View {
-        List(numbers, id: \.self) {
-            Text($0)
+        
+        VStack {
+            
+            ScrollView {
+                Text(viewModel.greeting)
+            }
+            .frame(height: 300)
+            
+            List(viewModel.values, id: \.self) {
+                Text($0.title)
+            }
         }
+        
+        
     }
 }

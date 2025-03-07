@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA7809832D787D2C0040052A /* VentuKitNetworking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7809822D787D2C0040052A /* VentuKitNetworking.xcframework */; };
-		EA7809842D787D2C0040052A /* VentuKitNetworking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7809822D787D2C0040052A /* VentuKitNetworking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA78BE562D7AB09F00682BA4 /* VentuKitNetworking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7809822D787D2C0040052A /* VentuKitNetworking.xcframework */; };
+		EA78BE572D7AB09F00682BA4 /* VentuKitNetworking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA7809822D787D2C0040052A /* VentuKitNetworking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EA78097F2D787C6C0040052A /* Embed Frameworks */ = {
+		EA78BE582D7AB09F00682BA4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EA7809842D787D2C0040052A /* VentuKitNetworking.xcframework in Embed Frameworks */,
+				EA78BE572D7AB09F00682BA4 /* VentuKitNetworking.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA7809832D787D2C0040052A /* VentuKitNetworking.xcframework in Frameworks */,
+				EA78BE562D7AB09F00682BA4 /* VentuKitNetworking.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 				EA7809582D787AEF0040052A /* Sources */,
 				EA7809592D787AEF0040052A /* Frameworks */,
 				EA78095A2D787AEF0040052A /* Resources */,
-				EA78097F2D787C6C0040052A /* Embed Frameworks */,
+				EA78BE582D7AB09F00682BA4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

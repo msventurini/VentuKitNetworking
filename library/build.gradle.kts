@@ -1,3 +1,4 @@
+import co.touchlab.skie.configuration.SuppressSkieWarning
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -46,6 +47,8 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
             implementation(libs.kotlinx.coroutines.core)
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+
         }
 
         androidMain.dependencies {
