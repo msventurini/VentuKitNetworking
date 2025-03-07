@@ -19,8 +19,8 @@ struct ContentView: View {
                     await viewModel.startObserving()
                 }
             }
-            
-            ListView(topText: viewModel.greeting,numbers: viewModel.values)
+//            Text(viewModel.greeting)
+            ListView()
         }
     }
 }

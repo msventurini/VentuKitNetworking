@@ -1,0 +1,7 @@
+package ventukitnetworking
+
+class GamerpowerMockData {
+
+
+
+}

@@ -10,8 +10,10 @@ class ApiNetworkClient: NetworkClient {
 
     override suspend fun greeting(): String {
 
-        val response = client.get("https://www.gamerpower.com/api/giveaways")
+//        val response = client.get("https://www.gamerpower.com/api/giveaways")
 //        client.close()
-        return response.bodyAsText()
+//        return response.bodyAsText()
+
+        return "MAH OE"
     }
 }
