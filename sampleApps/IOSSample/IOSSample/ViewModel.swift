@@ -17,7 +17,7 @@
 import SwiftUI
 import VentuKitNetworking
 
-@Observable class ViewModel: ObservableObject {
+@Observable class ViewModel {
     var values: [String] = []
     
     var greeting: String = ""
@@ -34,7 +34,7 @@ import VentuKitNetworking
     
     func testSuspendedFunc() async {
         
-        let client = NetworkClient()
+        let client = ApiNetworkClient()
         
         do {
             greeting = try await client.greeting()
