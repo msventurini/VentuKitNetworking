@@ -20,7 +20,6 @@ import VentuKitNetworking
 struct ListView: View {
     
     @Environment(ViewModel.self) var viewModel
-
     
     var body: some View {
         
@@ -32,7 +31,7 @@ struct ListView: View {
             .frame(height: 300)
             
             List(viewModel.values, id: \.self) {
-                Text($0)
+                Text($0.title)
             }
         }
         

@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import VentuKitNetworking
 
 @main
 struct IOSSampleApp: App {
     
-    @State var viewModel: ViewModel = ViewModel()
-//    @ObservedObject var viewModel: ViewModel = ViewModel()
+    @State var viewModel: ViewModel = ViewModel(client: ApiNetworkClient())
     
     var body: some Scene {
         WindowGroup {
